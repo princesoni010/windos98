@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "bun run build:registry && vite build",
-    "build:registry": "bun scripts/generate_registry.js",
+    "build": "node scripts/generate_registry.js && vite build",
+    "build:registry": "node scripts/generate_registry.js",
     "preview": "vite preview",
-    "test": "bun x playwright test"
+    "test": "npx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
