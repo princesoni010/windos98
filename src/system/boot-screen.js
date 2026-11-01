@@ -50,7 +50,8 @@ function drawBIOSHeader() {
 
     // BIOS Text next to Award Logo
     terminal.write("\x1b[1;5HAward Modular BIOS v4.51PG, An Energy Star Ally");
-    terminal.write("\x1b[2;5HCopyright (C) 1984-85, Award Software, Inc.");
+    terminal.write("\x1b[2;5HCopyright (C) 1984-98, Award Software, Inc.");
+    terminal.write("\x1b[3;5HSystem: Rahul-Pentium-II 350MHz | Host: RAHUL_1998");
 
     // Energy Star Logo at top right
     // Terminal is cols wide. Energy Star is 135px wide.

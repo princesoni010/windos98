@@ -162,7 +162,42 @@ export async function initializeOS() {
       });
     }
 
+        // Fake Memory Check (Award BIOS Style)
     await executeBootStep(async () => {
+      let logElement = startBootProcessStep("Testing system memory (64MB Installed)...");
+      try {
+        const memLevels = [16384, 32768, 49152, 65536];
+        for (const kb of memLevels) {
+          if (logElement && logElement.firstChild) {
+            logElement.firstChild.nodeValue = `Testing system memory: ${kb}KB OK`;
+          }
+          await new Promise((resolve) => setTimeout(resolve, 80));
+        }
+        finalizeBootProcessStep(logElement, "OK");
+      } catch (e) {
+        finalizeBootProcessStep(logElement, "FAILED", e);
+      }
+    });
+
+    // Primary IDE Drive Detection
+    await executeBootStep(async () => {
+      let logElement = startBootProcessStep("Detecting Primary Master: QUANTUM FIREBALL 3.2GB...");
+      await new Promise((resolve) => setTimeout(resolve, 150));
+      finalizeBootProcessStep(logElement, "OK");
+    });
+
+    // Story Warning: 26 years ago!
+    await executeBootStep(async () => {
+      const term = getTerminal();
+      if (term) {
+        term.write("\r\n\x1b[33;1m[!][0m \x1b[1;37mWARNING: User profile corrupted.\x1b[0m\r\n");
+        term.write("    \x1b[31;1mLast login: 26 years ago (User: Rahul_1998)\x1b[0m\r\n");
+        term.write("    \x1b[36mRecovering uncommitted swap file fragments... [DONE]\x1b[0m\r\n\r\n");
+      }
+      await new Promise((resolve) => setTimeout(resolve, 700));
+    });
+
+await executeBootStep(async () => {
       let logElement = startBootProcessStep("Detecting mouse...");
       try {
         await new Promise((resolve) => setTimeout(resolve, 300));
@@ -358,7 +393,7 @@ export async function initializeOS() {
     }
 
     await executeBootStep(async () => {
-      startBootProcessStep("azOS Ready!");
+      startBootProcessStep("Starting Windows 98...");
       await new Promise((resolve) => setTimeout(resolve, 50));
     });
 
