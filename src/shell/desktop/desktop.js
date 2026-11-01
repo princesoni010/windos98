@@ -507,7 +507,7 @@ function updateCutIcons() {
 }
 
 function getWallpaperMode() {
-  return getItem(LOCAL_STORAGE_KEYS.WALLPAPER_MODE) || "tile";
+  return getItem(LOCAL_STORAGE_KEYS.WALLPAPER_MODE) || "stretch";
 }
 
 let currentWallpaperBlobUrl = null;
@@ -538,7 +538,8 @@ async function applyWallpaper() {
     desktop.style.backgroundPosition = "left top";
     if (mode === "stretch") {
       desktop.style.backgroundRepeat = "no-repeat";
-      desktop.style.backgroundSize = "100% 100%";
+      desktop.style.backgroundSize = "cover";
+      desktop.style.backgroundPosition = "center";
     } else if (mode === "center") {
       desktop.style.backgroundRepeat = "no-repeat";
       desktop.style.backgroundSize = "auto";

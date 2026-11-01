@@ -1,3 +1,4 @@
+import rahulWallpaper from '../assets/img/rahul_1998_wallpaper.jpg';
 import { wallpapers } from './wallpapers.js';
 
 export const themes = {
@@ -5,7 +6,7 @@ export const themes = {
     id: "default",
     name: "Windows Default",
     colorSchemeId: "default",
-    wallpaper: null,
+    wallpaper: rahulWallpaper,
     soundScheme: "Default",
     iconScheme: "default",
   },
