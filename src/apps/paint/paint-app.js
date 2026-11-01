@@ -1,5 +1,4 @@
 import { ShowDialogWindow } from "../../shared/components/dialog-window.js";
-import { ICONS } from "../../config/icons.js";
 import { Application } from '../../system/application.js';
 import { fs } from "@zenfs/core";
 import { ICONS } from '../../config/icons.js';
@@ -161,12 +160,7 @@ export class PaintApp extends Application {
                                             setTimeout(() => document.body.classList.remove("screen-glitch"), 800);
                                             ShowDialogWindow({
                                                 title: "Spectral Transmission Unlocked",
-                                                text: ">>> SECRET SPECTRAL LAYER <<<
-
-'I AM SPREAD ACROSS SECTORS 0x7F4A OF WIN386.SWP'
-'TO FINALIZE MY RESTORATION, CLICK START -> SHUT DOWN.'
-
-- Rahul Sharma (1998)",
+                                                text: ">>> SECRET SPECTRAL LAYER <<<\n\n'I AM SPREAD ACROSS SECTORS 0x7F4A OF WIN386.SWP'\n'TO FINALIZE MY RESTORATION, CLICK START -> SHUT DOWN.'\n\n- Rahul Sharma (1998)",
                                                 icons: ICONS.warning,
                                                 buttons: [{ label: "Understood", action: (dw) => dw.close() }]
                                             });

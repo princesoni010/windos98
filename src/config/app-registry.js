@@ -459,6 +459,20 @@ export const appRegistry = {
     },
     importApp: () => import("../apps/quake/quake-app.js")
   },
+  "rahul-artifact": {
+    config: {
+    id: "rahul-artifact",
+    title: "Rahul_Artifact_1998 - Case Solved!",
+    description: "The digital consciousness artifact of Rahul Sharma.",
+    icon: ICONS.computer,
+    category: "System",
+    width: 600,
+    height: 480,
+    resizable: true,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/rahul-artifact/rahul-artifact-app.js")
+  },
   "report-a-bug": {
     config: {
     id: "report-a-bug",
