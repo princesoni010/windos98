@@ -313,6 +313,20 @@ export const appRegistry = {
   },
     importApp: () => import("../apps/image-viewer/image-viewer-app.js")
   },
+  "internet-explorer": {
+    config: {
+    id: "internet-explorer",
+    title: "Microsoft Internet Explorer 4.0",
+    description: "Connect to the World Wide Web via VSNL Dial-Up.",
+    icon: ICONS["internet-explorer"],
+    category: "Internet",
+    width: 680,
+    height: 480,
+    resizable: true,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/internet-explorer/internet-explorer-app.js")
+  },
   "keen": {
     config: {
     id: "keen",

@@ -1,0 +1,275 @@
+.ie-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #c0c0c0;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 11px;
+}
+
+.ie-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+  overflow-x: auto;
+}
+
+.ie-toolbar button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 40px;
+  padding: 2px 4px;
+  font-size: 10px;
+  cursor: pointer;
+  background: #c0c0c0;
+  border: 1px solid transparent;
+}
+
+.ie-toolbar button:hover {
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+
+.ie-toolbar button:active {
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.ie-toolbar button span.icon {
+  font-size: 16px;
+  margin-bottom: 1px;
+}
+
+.ie-address-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  background: #c0c0c0;
+  border-bottom: 2px groove #ffffff;
+}
+
+.ie-address-bar label {
+  font-weight: bold;
+}
+
+.ie-address-bar input {
+  flex: 1;
+  padding: 2px 4px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  background: #ffffff;
+  border: 2px inset #ffffff;
+}
+
+.ie-address-bar button {
+  padding: 2px 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.ie-viewport {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 2px inset #ffffff;
+}
+
+/* Dial-up Connecting Banner Modal */
+.ie-dialup-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.ie-dialup-box {
+  width: 340px;
+  background: #c0c0c0;
+  border: 2px outset #ffffff;
+  padding: 12px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.ie-dialup-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.ie-dialup-progress {
+  width: 100%;
+  height: 18px;
+  background: #808080;
+  border: 2px inset #ffffff;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ie-dialup-bar {
+  height: 100%;
+  background: #000080;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.ie-dialup-status {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: #000080;
+  min-height: 28px;
+}
+
+/* 1998 Web Page Styles */
+.web-page {
+  padding: 16px;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+/* Rahul's CyberDen */
+.page-cyberden {
+  background: #000000;
+  color: #00ff00;
+  font-family: "Comic Sans MS", "Arial", sans-serif;
+}
+
+.page-cyberden marquee {
+  background: #ffff00;
+  color: #ff0000;
+  font-weight: bold;
+  padding: 4px;
+  border: 2px solid #ff0000;
+  margin-bottom: 12px;
+}
+
+.page-cyberden h1 {
+  color: #ff00ff;
+  text-shadow: 2px 2px #00ffff;
+  text-align: center;
+}
+
+.page-cyberden .hit-counter {
+  display: inline-block;
+  background: #222;
+  color: #00ff00;
+  border: 2px inset #fff;
+  padding: 3px 8px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.page-cyberden .guestbook-entry {
+  background: #111122;
+  border: 1px dashed #ffff00;
+  padding: 8px;
+  margin: 8px 0;
+  color: #ffffff;
+}
+
+/* WebCrawler 98 */
+.page-webcrawler {
+  background: #f7f7f7;
+  color: #222;
+}
+
+.webcrawler-header {
+  text-align: center;
+  border-bottom: 2px solid #000080;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.webcrawler-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #cc0000;
+  font-family: serif;
+}
+
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.search-result {
+  margin: 14px 0;
+}
+
+.search-result a {
+  font-size: 14px;
+  color: #0000cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-result p {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+.search-result .url {
+  color: #008000;
+  font-size: 11px;
+}
+
+/* Campus Inquirer */
+.page-inquirer {
+  background: #fffff0;
+  color: #111;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.newspaper-title {
+  text-align: center;
+  border-bottom: 3px double #000;
+  border-top: 3px double #000;
+  padding: 6px 0;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.headline {
+  font-size: 20px;
+  font-weight: bold;
+  color: #990000;
+  margin-top: 14px;
+}
+
+/* Anomalous Signals */
+.page-signals {
+  background: #050510;
+  color: #00ffff;
+  font-family: "Courier New", monospace;
+}
+
+.ie-status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 8px;
+  background: #c0c0c0;
+  border-top: 1px solid #808080;
+  font-size: 11px;
+}
