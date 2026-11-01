@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.10.0](https://github.com/princesoni010/windos98/compare/win98-web-v0.9.0...win98-web-v0.10.0) (2026-11-01)
+
+
+### Features
+
+* **base:** initial Windows 98 desktop shell and retro apps ([d850a67](https://github.com/princesoni010/windos98/commit/d850a67e29c4e78f63d1381f26de8791c3d06da8))
+* **boot:** add CRT Award BIOS memory check and 26-year corrupted profile warning ([61e20f2](https://github.com/princesoni010/windos98/commit/61e20f288ad6d80c029b2514081da79ac7f48944))
+* **browser:** add Internet Explorer 4.0 with VSNL dial-up, WebCrawler 98, and Rahul's CyberDen ([2c1e762](https://github.com/princesoni010/windos98/commit/2c1e7628e5d688eb93f72a4ff8eea7af6bf5fa57))
+* **easter-eggs:** add ClueTracker HUD, BSOD crash, DOS secret commands, Paint spectral layer, and Clippy cameo ([b20e632](https://github.com/princesoni010/windos98/commit/b20e632935e131eb21141d545e1b001d6d6e5235))
+* **finale:** add dramatic shutdown typewriter extraction and unlocked Rahul_Artifact_1998.exe ([8bb7725](https://github.com/princesoni010/windos98/commit/8bb7725f3ee0dcf50e0ee20221bce0453d544f43))
+* **story:** add Rahul_1998 files, C: directories, Notepad ghost egg, and project_x vault ([fc57e76](https://github.com/princesoni010/windos98/commit/fc57e762b3ed8a1608a09d9d41518587cf2c7433))
+* **ui:** add authentic 1998 vintage photograph of Rahul as desktop wallpaper ([3707681](https://github.com/princesoni010/windos98/commit/3707681e0888cc5c32d4044853f9fcb1bdf8bb06))
+
+
+### Bug Fixes
+
+* **build:** ensure node generates app registry and project builds cleanly ([c3a5ba8](https://github.com/princesoni010/windos98/commit/c3a5ba8130bcb470dd68c4d574579c6321bc86c6))
+* **notepad:** fix HELLO RAHUL easter egg detection and set relative base for live deployment ([49abc04](https://github.com/princesoni010/windos98/commit/49abc04b243afe8ec8bad96af27377552912321b))
+
 ## [0.9.0](https://github.com/azayrahmad/win98-web/compare/win98-web-v0.8.1...win98-web-v0.9.0) (2026-03-24)
 
 
