@@ -1,3 +1,5 @@
+import { ShowDialogWindow } from "../../shared/components/dialog-window.js";
+import { ICONS } from "../../config/icons.js";
 import { Application } from '../../system/application.js';
 import { fs } from "@zenfs/core";
 import { ICONS } from '../../config/icons.js';
@@ -143,6 +145,43 @@ export class PaintApp extends Application {
                 try {
                     const file = await this._getFileFromPath(path);
                     open_from_file(file, path);
+                    if (path.includes("ufo")) {
+                        setTimeout(() => {
+                            ShowDialogWindow({
+                                title: "Paint - Spectral Anomaly Detected",
+                                text: "You examine ufo_sighting.png in Paint.\n\nNotice that strange glowing red pixel at the apex of the saucer?\n\nClick the UFO dome or select 'Reveal Secret Layer' to decode it!",
+                                icons: ICONS.info,
+                                buttons: [
+                                    {
+                                        label: "Decode Secret Layer",
+                                        isDefault: true,
+                                        action: (w) => {
+                                            w.close();
+                                            document.body.classList.add("screen-glitch");
+                                            setTimeout(() => document.body.classList.remove("screen-glitch"), 800);
+                                            ShowDialogWindow({
+                                                title: "Spectral Transmission Unlocked",
+                                                text: ">>> SECRET SPECTRAL LAYER <<<
+
+'I AM SPREAD ACROSS SECTORS 0x7F4A OF WIN386.SWP'
+'TO FINALIZE MY RESTORATION, CLICK START -> SHUT DOWN.'
+
+- Rahul Sharma (1998)",
+                                                icons: ICONS.warning,
+                                                buttons: [{ label: "Understood", action: (dw) => dw.close() }]
+                                            });
+                                            if (typeof window !== "undefined") {
+                                                window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                                    detail: { id: 'clue-paint-hidden', title: 'Spectral UFO Layer: The Swap File Message' }
+                                                }));
+                                            }
+                                        }
+                                    },
+                                    { label: "Close", action: (w) => w.close() }
+                                ]
+                            });
+                        }, 500);
+                    }
                 } catch (e) {
                     console.error("Failed to open file from ZenFS", e);
                 }

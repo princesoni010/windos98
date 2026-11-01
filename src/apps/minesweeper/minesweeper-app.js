@@ -402,6 +402,20 @@ export class MinesweeperApp extends Application {
         `url(${new URL("./assets/minesweeper-smiley-lose.png", import.meta.url).href})`,
       );
       this.renderBoard();
+
+      setTimeout(() => {
+        ShowDialogWindow({
+          title: "Game Over - Rahul_1998",
+          text: "BOOM! RAHUL DID NOT SURVIVE THIS MINEFIELD EITHER.\n\nRahul's ghost whispers:\n'I stepped on a memory exception 26 years ago... Be careful.'",
+          icons: ICONS.warning,
+          buttons: [{ label: "Try Again", action: (w) => w.close() }]
+        });
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(new CustomEvent('clue-discovered', {
+            detail: { id: 'clue-minesweeper', title: 'Minesweeper: Rahul Did Not Survive' }
+          }));
+        }
+      }, 300);
     } else if (result === "win") {
       this.game.isGameOver = true;
       this.stopTimer();

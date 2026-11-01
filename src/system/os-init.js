@@ -1,3 +1,4 @@
+import { ClueTracker } from "./clue-tracker.js";
 import splashBg from "../assets/img/splash.png";
 import { initDesktop } from "../shell/desktop/desktop.js";
 import { getItem, LOCAL_STORAGE_KEYS } from "./local-storage.js";
@@ -373,6 +374,7 @@ await executeBootStep(async () => {
         try {
           await new Promise((resolve) => setTimeout(resolve, 50));
           taskbar.init();
+          ClueTracker.init();
           finalizeBootProcessStep(logElement, "OK");
         } catch (e) {
           finalizeBootProcessStep(logElement, "FAILED", e);

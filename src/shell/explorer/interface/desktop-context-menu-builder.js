@@ -1,3 +1,5 @@
+import { ShowDialogWindow } from "../../../shared/components/dialog-window.js";
+import { ICONS } from "../../../config/icons.js";
 import { ContextMenuBuilder } from "./context-menu-builder.js";
 import {
   getThemes,
@@ -237,6 +239,25 @@ export class DesktopContextMenuBuilder extends ContextMenuBuilder {
             ],
           },
         ],
+      },
+      "MENU_DIVIDER",
+      {
+        label: "Inspect Anomaly...",
+        action: () => {
+          document.body.classList.add("screen-glitch");
+          setTimeout(() => document.body.classList.remove("screen-glitch"), 800);
+          ShowDialogWindow({
+            title: "Wallpaper Inspection - Anomaly Detected",
+            text: "You examine the desktop teal wallpaper closely...\n\nTucked behind the virtual desktop icons is a scratch etched in pencil:\n'THE 1420.405 MHz CARRIER PEAKS AT 03:33 AM.'\n'Bunty, do not let them format this drive!'",
+            icons: ICONS.info,
+            buttons: [{ label: "Fascinating", action: (w) => w.close() }]
+          });
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(new CustomEvent('clue-discovered', {
+              detail: { id: 'clue-anomaly-wallpaper', title: 'Wallpaper Scratches: 1420 MHz' }
+            }));
+          }
+        }
       },
       "MENU_DIVIDER",
       {
