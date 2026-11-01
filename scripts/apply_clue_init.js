@@ -9,3 +9,4 @@ if (!c.includes('clue-tracker.js')) {
   fs.writeFileSync(p, c, 'utf8');
   console.log('os-init.js patched with ClueTracker.init()');
 }
+

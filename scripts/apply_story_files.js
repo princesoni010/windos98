@@ -9,3 +9,4 @@ if (!c.includes('story-files-init.js')) {
   fs.writeFileSync(p, c, 'utf8');
   console.log('zenfs-init.js updated with initStoryFiles');
 }
+

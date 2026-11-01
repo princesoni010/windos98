@@ -1,4 +1,4 @@
-import { checkProjectXAccess } from "../../../../system/vault-dialog.js";
+import { checkProjectXAccess } from "../../../system/vault-dialog.js";
 import { mounts } from "@zenfs/core";
 import {
   requestBusyState,

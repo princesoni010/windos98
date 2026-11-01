@@ -51,3 +51,4 @@ if (c.includes(targetCRLF)) {
 } else {
   console.error('Target not found in minesweeper-app.js');
 }
+

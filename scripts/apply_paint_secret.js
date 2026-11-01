@@ -56,3 +56,4 @@ if (!c.includes('clue-paint-hidden')) {
     console.error('Target not found in paint-app.js');
   }
 }
+

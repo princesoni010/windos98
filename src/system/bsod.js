@@ -76,3 +76,4 @@ export function triggerBSOD() {
   bsod.addEventListener("click", cleanup);
   window.addEventListener("keydown", cleanup, { once: true });
 }
+

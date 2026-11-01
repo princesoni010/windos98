@@ -491,3 +491,4 @@ export class InternetExplorerApp extends Application {
     });
   }
 }
+

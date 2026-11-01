@@ -10,3 +10,4 @@ c = c.replace('import { ShowDialogWindow } from "../../shared/components/dialog-
 
 fs.writeFileSync(p, c, 'utf8');
 console.log('Removed duplicate ICONS import in paint-app.js');
+

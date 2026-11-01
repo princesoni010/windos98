@@ -25,3 +25,4 @@ if (!c.includes('Clippy Assistant')) {
   fs.writeFileSync(p, c, 'utf8');
   console.log('clue-tracker.js patched with Clippy cameo');
 }
+

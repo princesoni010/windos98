@@ -49,3 +49,4 @@ if (c.includes(targetCRLF)) {
 } else {
   console.error('Could not find onInput target in notepad-app.js');
 }
+

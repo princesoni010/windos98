@@ -32,3 +32,4 @@ if (c.includes(badCRLF)) {
   fs.writeFileSync(p, c, 'utf8');
   console.log('Fixed paint-app.js string (regex)');
 }
+

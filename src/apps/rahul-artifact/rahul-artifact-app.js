@@ -81,3 +81,4 @@ export class RahulArtifactApp extends Application {
     return this.win;
   }
 }
+

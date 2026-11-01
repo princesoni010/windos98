@@ -18,3 +18,4 @@ if (!c.includes('vault-dialog.js')) {
   fs.writeFileSync(p, c, 'utf8');
   console.log('navigation-controller.js patched with project_x password protection');
 }
+
