@@ -187,6 +187,29 @@ export class NotepadApp extends Application {
             onInput: () => {
                 this.isDirty = true;
                 this.updateTitle();
+
+                const text = this.editor.getContent();
+                if (!this._helloRahulTriggered && /HELLO\s+RAHUL/i.test(text)) {
+                    this._helloRahulTriggered = true;
+                    setTimeout(() => {
+                        const reply = "\r\n\r\n" +
+                            "===================================================================\r\n" +
+                            "[COM1 VIRTUAL TTY - RAHUL_1998 SIGNAL DETECTED]\r\n" +
+                            "WHO IS TYPING? ARE YOU LOGGED INTO MY COMPUTER AFTER 26 YEARS?\r\n" +
+                            "I AM TRAPPED INSIDE WIN386.SWP SECTOR 0x7F4A.\r\n" +
+                            "BUNTY THREW MY CONFESSION INTO THE RECYCLE BIN.\r\n" +
+                            "CHECK passwords.txt FOR MY PROJECT_X PASSCODE (2000samosa)!\r\n" +
+                            "===================================================================\r\n";
+                        this.editor.setContent(this.editor.getContent() + reply);
+                        document.body.classList.add("screen-glitch");
+                        setTimeout(() => document.body.classList.remove("screen-glitch"), 600);
+                        if (typeof window !== 'undefined') {
+                            window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                detail: { id: 'clue-notepad-hello', title: 'Notepad: Rahul Speaks Back' }
+                            }));
+                        }
+                    }, 350);
+                }
             }
         });
 
@@ -215,6 +238,46 @@ export class NotepadApp extends Application {
                     this.isDirty = false;
                     this.updateTitle();
                     this.setLanguage(this.getLanguageFromExtension(this.fileName));
+
+                    if (this.fileName === "DO_NOT_OPEN.txt") {
+                        setTimeout(() => {
+                            ShowDialogWindow({
+                                title: "SECURITY VIOLATION - RAHUL_1998",
+                                text: "WARNING: You were explicitly instructed NOT to open this file!\n\nRahul's presence has registered your browser session.\n'I can feel your cursor on my screen...'\n\n(Clue Discovered: Warning Acknowledged)",
+                                icons: ICONS.warning,
+                                buttons: [{ label: "Close Eyes", action: (w) => w.close() }]
+                            });
+                            if (typeof window !== 'undefined') {
+                                window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                    detail: { id: 'clue-do-not-open', title: 'Curiosity Killed the Student: DO_NOT_OPEN.txt' }
+                                }));
+                            }
+                        }, 250);
+                    } else if (this.fileName.includes("passwords.txt")) {
+                        if (typeof window !== 'undefined') {
+                            window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                detail: { id: 'clue-passwords', title: 'Found Rahul\'s Passwords' }
+                            }));
+                        }
+                    } else if (this.fileName.includes("mom_email")) {
+                        if (typeof window !== 'undefined') {
+                            window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                detail: { id: 'clue-mom-email', title: 'Family Woes: The Dial-up Phone Crisis' }
+                            }));
+                        }
+                    } else if (this.fileName.includes("college_notes")) {
+                        if (typeof window !== 'undefined') {
+                            window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                detail: { id: 'clue-college-notes', title: 'IIT Archives: Rahul\'s 1998 Diary' }
+                            }));
+                        }
+                    } else if (this.fileName.includes("final_message")) {
+                        if (typeof window !== 'undefined') {
+                            window.dispatchEvent(new CustomEvent('clue-discovered', {
+                                detail: { id: 'clue-final-message', title: 'The Last Transmission' }
+                            }));
+                        }
+                    }
                 } catch (e) {
                     console.error("Error loading from ZenFS:", e);
                     ShowDialogWindow({

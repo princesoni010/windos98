@@ -1,3 +1,4 @@
+import { checkProjectXAccess } from "../../../../system/vault-dialog.js";
 import { mounts } from "@zenfs/core";
 import {
   requestBusyState,
@@ -45,6 +46,11 @@ export class NavigationController {
       if (normalizedPath.startsWith("/E:") && !mounts.has("/E:")) {
         this.app.driveManager.showCDDialog();
         return;
+      }
+
+      if (normalizedPath.toLowerCase().includes("project_x")) {
+        const canAccess = await checkProjectXAccess();
+        if (!canAccess) return;
       }
 
       const stats = await ShellManager.stat(normalizedPath);

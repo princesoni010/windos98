@@ -1,3 +1,4 @@
+import { initStoryFiles } from "./story-files-init.js";
 import { resolveMountConfig, InMemory, fs } from "@zenfs/core";
 import { IndexedDB, WebAccess } from "@zenfs/dom";
 import {
@@ -321,6 +322,7 @@ export async function initFileSystem(onProgress) {
       console.error("Failed to load persisted removable disks:", e);
     }
 
+    await initStoryFiles();
     isInitialized = true;
     window.fs = fs; // Expose for debugging
     console.log("ZenFS initialized successfully.");
