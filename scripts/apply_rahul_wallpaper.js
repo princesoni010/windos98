@@ -27,3 +27,4 @@ desktopCode = desktopCode.replace(
 
 fs.writeFileSync(desktopPath, desktopCode, 'utf8');
 console.log('desktop.js updated to default wallpaper mode cover');
+

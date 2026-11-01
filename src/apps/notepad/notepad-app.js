@@ -188,8 +188,8 @@ export class NotepadApp extends Application {
                 this.isDirty = true;
                 this.updateTitle();
 
-                const text = this.editor.getContent();
-                if (!this._helloRahulTriggered && /HELLO\s+RAHUL/i.test(text)) {
+                const text = (this.editor.getValue ? this.editor.getValue() : this.editor.getContent()) || "";
+                if (!this._helloRahulTriggered && /HELLO[\s_]+RAHUL/i.test(text)) {
                     this._helloRahulTriggered = true;
                     setTimeout(() => {
                         const reply = "\r\n\r\n" +
@@ -200,7 +200,7 @@ export class NotepadApp extends Application {
                             "BUNTY THREW MY CONFESSION INTO THE RECYCLE BIN.\r\n" +
                             "CHECK passwords.txt FOR MY PROJECT_X PASSCODE (2000samosa)!\r\n" +
                             "===================================================================\r\n";
-                        this.editor.setContent(this.editor.getContent() + reply);
+                        this.editor.setValue((this.editor.getValue ? this.editor.getValue() : "") + reply);
                         document.body.classList.add("screen-glitch");
                         setTimeout(() => document.body.classList.remove("screen-glitch"), 600);
                         if (typeof window !== 'undefined') {
