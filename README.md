@@ -131,8 +131,3 @@ npm run preview
 
 ---
 
-## 📜 Credits & License
-- **Base Project**: [madeburo/floppyy](https://github.com/madeburo/floppyy) / [azayrahmad/win98-web](https://github.com/azayrahmad/win98-web) (MIT License).
-- **Sound Effects & Audio**: Real-time synthesized via Web Audio API oscillators and open sound schemes.
-- **Icons & Graphics**: Original retro pixel art canvas generators and open retro asset collections.
-- **Concept & Lore**: Created for the Hackathon experience **"THE ABANDONED COMPUTER"**.
